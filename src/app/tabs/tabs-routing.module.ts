@@ -8,27 +8,35 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'explore-tab',
+        loadChildren: () => import('../explore-tab/explore-tab.module').then(m => m.ExploreTabPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'saved-tab',
+        loadChildren: () => import('../saved-tab/saved-tab.module').then(m => m.SavedTabPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'trips-tab',
+        loadChildren: () => import('../trips-tab/trips-tab.module').then(m => m.TripsTabPageModule)
+      },
+      {
+        path: 'messages-tab',
+        loadChildren: () => import('../messages-tab/messages-tab.module').then(m => m.MessagesTabPageModule)
+      },
+      {
+        path: 'profile-tab',
+        loadChildren: () => import('../profile-tab/profile-tab.module').then(m => m.ProfileTabPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/explore-tab',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/explore-tab',
     pathMatch: 'full'
   }
 ];
