@@ -1,5 +1,5 @@
 import { IonicModule } from '@ionic/angular';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ExploreTabPage } from './explore-tab.page';
@@ -14,6 +14,7 @@ import { MapComponent } from 'src/app/tabs/components/map/map.component';
     FormsModule,
     ExploreTabPageRoutingModule
   ],
-  declarations: [ExploreTabPage, MapComponent]
+  declarations: [ExploreTabPage, MapComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ExploreTabPageModule {}

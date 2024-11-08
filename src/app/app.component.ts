@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'app-root',

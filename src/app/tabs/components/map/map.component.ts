@@ -15,6 +15,7 @@ export class MapComponent implements AfterViewInit {
   pinsData: Pin[] = [];
 
   @Output() emitOpenPinInfoCard: EventEmitter<Pin> = new EventEmitter<Pin>();
+  @Output() emitClosePinInfoCard: EventEmitter<null> = new EventEmitter<null>();
 
   constructor() { }
 
@@ -38,6 +39,10 @@ export class MapComponent implements AfterViewInit {
     }
 
     this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+
+    this.map.addListener('click', () => {
+      this.emitClosePinInfoCard.emit();
+    })
 
     this.map.addListener('idle', () => {
       this.onMapIdle();
