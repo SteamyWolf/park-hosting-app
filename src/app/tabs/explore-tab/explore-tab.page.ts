@@ -11,8 +11,8 @@ import { MapService } from 'src/app/services/map.service';
 export class ExploreTabPage implements OnInit {
 
   coordinates: {lat: number, lng: number} | null = null;
-
   destination!: Prediction;
+  showPinCard: boolean = false;
 
   constructor(private navCtrl: NavController,
               private mapService: MapService) {}
@@ -25,6 +25,11 @@ export class ExploreTabPage implements OnInit {
 
   backToDestination(): void {
       this.navCtrl.navigateBack('destination');
+  }
+
+  openPinInfoCard(): void {
+    console.log('this is opening')
+    this.showPinCard = true;
   }
 
 }

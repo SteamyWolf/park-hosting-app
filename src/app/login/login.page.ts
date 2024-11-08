@@ -14,7 +14,6 @@ export class LoginPage implements OnInit {
   }
 
   continue() {
-    console.log('this has continued');
     this.router.navigate(['destination'], {relativeTo: this.route});
   }
 
