@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { PlacesAutocompleteResponse } from "../domain/google.place";
+import { PlaceDetailsResponse } from "../domain/google.place-detail";
 
 @Injectable({providedIn: 'root'})
 export class GoogleService {

@@ -1,4 +1,4 @@
-interface PlaceDetailsResponse {
+  export interface PlaceDetailsResponse {
     html_attributions: any[]; // This is usually empty in Google Places responses.
     result: PlaceResult;
     status: string;

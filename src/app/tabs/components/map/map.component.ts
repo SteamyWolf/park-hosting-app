@@ -25,7 +25,11 @@ export class MapComponent implements AfterViewInit {
 
     const mapOptions: google.maps.MapOptions = {
       center: this.coordinates,
-      zoom: 12
+      zoom: 12,
+      mapTypeControl: false,
+      streetViewControl: false,
+      zoomControl: false,
+      fullscreenControl: false,
     }
 
     this.map = new google.maps.Map(this.mapContainer.nativeElement, mapOptions)
