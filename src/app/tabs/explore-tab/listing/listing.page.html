@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar class="toolbar-padding">
+      <ion-buttons slot="start">
+        <ion-back-button default-href="#"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Park Host Details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <swiper-container pagination="true">
+    <!-- Slide 1 -->
+    <swiper-slide>
+      <img src="https://picsum.photos/200/300" alt="Image 1" class="swiper-image" />
+    </swiper-slide>
+    
+    <!-- Slide 2 -->
+    <swiper-slide>
+      <img src="https://picsum.photos/200/300" alt="Image 1" class="swiper-image" />
+    </swiper-slide>
+    
+    <!-- Slide 3 -->
+    <swiper-slide>
+      <img src="https://picsum.photos/200/300" alt="Image 1" class="swiper-image" />
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="ion-padding">
+    <ion-text>
+      <h4 class="listing-title">Covered Parking - Los Angeles Airport</h4>
+    </ion-text>
+
+    <div class="location-total-container">
+      <ion-text class="listing-subtitle">Near Los Angeles Airport (LAX)</ion-text>
+      <div class="total-container">
+        <h4 class="no-margin">$26.55</h4>
+        <ion-text class="total-copy">Total</ion-text>
+      </div>
+    </div>
+
+    <div class="reviews-container">
+      <ion-icon class="star-icon" name="star"></ion-icon>
+      <ion-text><strong>4.1 (26)</strong></ion-text>
+    </div>
+
+  </div>
+
+</ion-content>

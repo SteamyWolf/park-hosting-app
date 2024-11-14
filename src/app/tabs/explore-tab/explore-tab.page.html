@@ -3,15 +3,15 @@
     <ion-toolbar>
       <ion-item (click)="backToDestination()">
         <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input fill="solid" [(ngModel)]="destination.description"></ion-input>
+        <ion-input *ngIf="destination" fill="solid" [(ngModel)]="destination.description"></ion-input>
       </ion-item>
     </ion-toolbar>
   </ion-header>
 
   <app-map class="map" [coordinates]="coordinates" (emitOpenPinInfoCard)="openPinInfoCard()" (emitClosePinInfoCard)="closePinCard()"></app-map>
 
-  <ion-card class="pin-card" *ngIf="showPinCard">
-    <swiper-container>
+  <ion-card class="pin-card" *ngIf="showPinCard" (click)="pinCardClick()">
+    <swiper-container pagination="true">
       <!-- Slide 1 -->
       <swiper-slide>
         <img src="https://picsum.photos/200/300" alt="Image 1" class="swiper-image" />

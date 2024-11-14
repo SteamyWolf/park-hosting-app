@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { Prediction } from 'src/app/domain/google.place';
 import { MapService } from 'src/app/services/map.service';
@@ -16,11 +17,16 @@ export class ExploreTabPage implements OnInit {
 
   constructor(private navCtrl: NavController,
               private mapService: MapService,
-              private cd: ChangeDetectorRef) {}
+              private cd: ChangeDetectorRef,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
       let coordinates = {lat: this.mapService.getLat(), lng: this.mapService.getLng()};
       this.destination = this.mapService.getDestination();
+      if (!this.destination || !coordinates.lat || !coordinates.lng) {
+          this.backToDestination();
+          return;
+      }
       this.coordinates = coordinates;
   }
 
@@ -36,6 +42,10 @@ export class ExploreTabPage implements OnInit {
   closePinCard(): void {
     this.showPinCard = false;
     this.cd.detectChanges();
+  }
+
+  pinCardClick() {
+    this.navCtrl.navigateForward(['listing'], {relativeTo: this.route});
   }
 
 }

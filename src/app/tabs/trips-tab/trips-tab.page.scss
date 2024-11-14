@@ -1,0 +1,13 @@
+ion-item {
+    margin-bottom: 0.5rem;
+    ion-thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+    img {
+        border-radius: 6px;
+    }
+    ion-text {
+        display: block;
+    }
+}

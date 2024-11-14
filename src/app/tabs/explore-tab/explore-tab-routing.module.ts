@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: ExploreTabPage,
+  },
+  {
+    path: 'listing',
+    loadChildren: () => import('./listing/listing.module').then( m => m.ListingPageModule)
   }
 ];
 
